@@ -1,1 +1,972 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefInSpace 2025 - Partnership Sponsor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #60a5ff;
+            --secondary-blue: #b4e0ff;
+            --dark-blue-1: #0f2027;
+            --dark-blue-2: #203a43;
+            --dark-blue-3: #2c5364;
+            --light-text: #f0f4f8;
+            --subtle-text: rgba(197, 215, 231, 0.8);
+            --gold: #ffd700;
+            --silver: #e5e7eb;
+            --bronze: #f97316;
+            --red: #ef4444;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 8mm;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue-1), var(--dark-blue-2), var(--dark-blue-3));
+            color: var(--light-text);
+            font-size: 0.9em; /* Adjust base font size for responsiveness */
+            line-height: 1.5;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding: 1rem 0.5rem; /* Responsive padding: decreased top/bottom, kept sides */
+        }
+
+        /* WATERMARK SATELLITI */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 70vmin; /* Responsive width */
+            height: 70vmin; /* Responsive height */
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="8" fill="none" stroke="currentColor" stroke-width="1"/><path d="M20 50h15M65 50h15M50 20v15M50 65v15" stroke="currentColor" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,2"/></svg>') no-repeat center;
+            background-size: contain;
+            opacity: 0.03;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 900px; /* Max width for larger screens */
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 0 0.5rem; /* Inner padding for smaller screens: reduced to prevent overflow */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.1));
+            padding: 1.2rem; /* Reduced padding */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(var(--primary-blue), 0.2);
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0288d1, var(--primary-blue));
+            border-radius: 12px 12px 0 0;
+        }
+
+        .event-info {
+            background: linear-gradient(90deg, #0288d1, #026aa7);
+            color: #fff;
+            padding: 0.4rem 1rem; /* Reduced padding */
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.8rem; /* Slightly smaller font for consistency */
+            margin-bottom: 0.8rem; /* Reduced margin */
+            display: inline-block;
+            letter-spacing: 1px;
+            box-shadow: inset 0 -3px 5px rgba(1, 74, 123, 0.7);
+            white-space: nowrap; /* Prevent wrapping for "10 & 11 OTTOBRE 2025 • NAPOLI, ITALY" if possible */
+        }
+
+        .header h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem); /* Adjusted minimum font size */
+            font-weight: 800;
+            color: var(--secondary-blue);
+            margin-bottom: 0.4rem; /* Reduced margin */
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px rgba(var(--primary-blue), 0.8);
+        }
+
+        .header .subtitle {
+            font-size: clamp(0.8rem, 2vw, 1.1rem); /* Adjusted minimum font size */
+            font-weight: 500;
+            color: var(--subtle-text);
+            margin-bottom: 0.4rem; /* Reduced margin */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .header .theme {
+            font-size: clamp(0.9rem, 2.5vw, 1.3rem); /* Adjusted minimum font size */
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.4rem 0.8rem; /* Reduced padding */
+            border: 2px solid var(--primary-blue);
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 6px rgba(var(--primary-blue), 0.5);
+        }
+
+        .victory-banner {
+            background: linear-gradient(135deg, #16425b, var(--dark-blue-3));
+            padding: 1.2rem; /* Reduced padding */
+            border-radius: 12px;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--primary-blue);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .victory-banner:hover {
+            background: linear-gradient(135deg, var(--dark-blue-3), #16425b);
+        }
+
+        .victory-content {
+            display: flex; /* Changed to flexbox for better control on small screens */
+            flex-direction: column; /* Stack items vertically on small screens */
+            gap: 1.2rem; /* Adjusted gap */
+            align-items: center; /* Center items when stacked */
+        }
+
+        .victory-text h2 {
+            font-size: clamp(1rem, 3.5vw, 1.5rem); /* Adjusted minimum font size */
+            font-weight: 700;
+            margin-bottom: 0.6rem; /* Reduced margin */
+            color: var(--secondary-blue);
+            text-shadow: 0 0 6px rgba(180, 224, 255, 0.5);
+            text-align: center; /* Center align title for mobile */
+        }
+
+        .victory-details {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 0.8rem; /* Adjusted gap */
+            margin-top: 0.6rem; /* Reduced margin */
+        }
+
+        .victory-item {
+            background: rgba(var(--primary-blue), 0.1);
+            padding: 0.8rem; /* Reduced padding */
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .victory-item h3 {
+            font-size: clamp(0.85rem, 2.5vw, 1rem); /* Adjusted minimum font size */
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.3rem; /* Reduced margin */
+        }
+
+        .victory-item p {
+            font-size: 0.75rem; /* Slightly smaller font */
+            color: var(--light-text);
+            line-height: 1.4;
+        }
+
+        .victory-badge {
+            background: rgba(var(--primary-blue), 0.15);
+            padding: 1rem; /* Reduced padding */
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(var(--primary-blue), 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; /* Prevent badge from shrinking */
+        }
+
+        .victory-badge .trophy {
+            font-size: clamp(2rem, 6vw, 3rem); /* Adjusted minimum font size */
+            margin-bottom: 0.4rem; /* Reduced margin */
+            display: block;
+            filter: drop-shadow(0 0 4px rgba(var(--primary-blue), 0.8));
+        }
+
+        .victory-badge .year {
+            font-size: clamp(1rem, 3vw, 1.4rem); /* Adjusted minimum font size */
+            font-weight: 800;
+            color: var(--secondary-blue);
+        }
+
+        .photo-gallery {
+            background: linear-gradient(135deg, #16425b, var(--dark-blue-1));
+            padding: 1rem; /* Reduced padding */
+            border-radius: 12px;
+            margin-bottom: 1.5rem; /* Reduced margin */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(var(--primary-blue), 0.2);
+        }
+
+        .gallery-title {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            color: var(--secondary-blue);
+            margin-bottom: 0.8rem; /* Reduced margin */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted minwidth for smaller screens */
+            gap: 0.6rem; /* Reduced gap */
+            height: auto; /* Allow height to adjust */
+        }
+
+        .photo-item {
+            background: linear-gradient(135deg, rgba(var(--primary-blue), 0.1), rgba(2, 136, 209, 0.1));
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(var(--primary-blue), 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding-top: 66.66%; /* Aspect ratio 3:2 (height / width * 100) */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .photo-item:hover {
+            border-color: var(--primary-blue);
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(var(--primary-blue), 0.3);
+        }
+
+        .photo-main {
+            grid-column: span 1; /* Default to 1 column on smallest screens */
+            padding-top: 56.25%; /* 16:9 aspect ratio for main on small screen */
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 32, 39, 0.95));
+            padding: 0.4rem; /* Reduced padding */
+            color: var(--secondary-blue);
+            font-size: 0.7rem; /* Slightly smaller font */
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, rgba(2, 136, 209, 0.15), rgba(var(--primary-blue), 0.1));
+            border-radius: 12px;
+            padding: 1.2rem; /* Reduced padding */
+            margin-bottom: 1.5rem; /* Reduced margin */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(var(--primary-blue), 0.2);
+        }
+
+        .stats-title {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            font-weight: 700;
+            color: var(--secondary-blue);
+            text-align: center;
+            margin-bottom: 1rem; /* Reduced margin */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adaptive columns, smaller min width */
+            gap: 0.8rem; /* Reduced gap */
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #16425b, var(--dark-blue-3));
+            border: 1px solid rgba(var(--primary-blue), 0.3);
+            padding: 1rem; /* Reduced padding */
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0288d1, var(--primary-blue));
+            border-radius: 10px 10px 0 0;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(var(--primary-blue), 0.3);
+            background: linear-gradient(135deg, var(--dark-blue-3), #16425b);
+        }
+
+        .stat-number {
+            font-size: clamp(1.6rem, 4vw, 2.2rem); /* Adjusted min font size */
+            font-weight: 800;
+            color: var(--secondary-blue);
+            margin-bottom: 0.3rem; /* Reduced margin */
+            text-shadow: 0 0 4px rgba(180, 224, 255, 0.5);
+        }
+
+        .stat-label {
+            font-size: 0.75rem; /* Slightly smaller font */
+            color: #c5d7e7;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 1rem; /* Reduced gap */
+            margin-bottom: 1.5rem; /* Reduced margin */
+        }
+
+        .section {
+            background: linear-gradient(135deg, #16425b, var(--dark-blue-1));
+            padding: 1rem; /* Reduced padding */
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(var(--primary-blue), 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .section:hover {
+            border-color: rgba(var(--primary-blue), 0.4);
+            background: linear-gradient(135deg, var(--dark-blue-3), #16425b);
+        }
+
+        .section-title {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            margin-bottom: 0.8rem; /* Reduced margin */
+            color: var(--secondary-blue);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem; /* Reduced gap */
+            padding-bottom: 0.6rem; /* Reduced padding */
+            border-bottom: 2px solid rgba(var(--primary-blue), 0.3);
+        }
+
+        .section-icon {
+            font-size: clamp(1rem, 2.8vw, 1.3rem);
+            filter: drop-shadow(0 0 3px rgba(var(--primary-blue), 0.5));
+        }
+
+        .partner-category {
+            margin-bottom: 0.8rem; /* Reduced margin */
+        }
+
+        .partner-category-title {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            font-weight: 700;
+            margin-bottom: 0.6rem; /* Reduced margin */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem; /* Reduced gap */
+        }
+
+        .gold-title { color: var(--gold); text-shadow: 0 0 3px rgba(255, 215, 0, 0.5); }
+        .silver-title { color: var(--silver); text-shadow: 0 0 3px rgba(229, 231, 235, 0.5); }
+        .bronze-title { color: var(--bronze); text-shadow: 0 0 3px rgba(249, 115, 22, 0.5); }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Adjusted for very small screens, more flexible */
+            gap: 0.4rem; /* Reduced gap for closer boxes */
+        }
+
+        .partner-tag {
+            background: rgba(var(--primary-blue), 0.1);
+            border: 1px solid rgba(var(--primary-blue), 0.3);
+            padding: 0.6rem 0.7rem; /* Reduced padding */
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.65rem; /* Smaller font for tags */
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            white-space: nowrap; /* Prevent breaking words inside tags if they fit */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+            line-height: 1; /* Ensure single line if nowrap is used */
+        }
+
+        .partner-tag a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .partner-tag:hover {
+            background: rgba(var(--primary-blue), 0.2);
+            border-color: var(--primary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(var(--primary-blue), 0.3);
+        }
+
+        .gold-tag { border-color: var(--gold); }
+        .silver-tag { border-color: var(--silver); }
+        .bronze-tag { border-color: var(--bronze); }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 0.6rem; /* Reduced gap */
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem; /* Reduced gap */
+            padding: 0.7rem; /* Reduced padding */
+            background: rgba(var(--primary-blue), 0.1);
+            border-radius: 8px;
+            font-size: 0.75rem; /* Slightly smaller font */
+            border-left: 3px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-item:hover {
+            background: rgba(var(--primary-blue), 0.15);
+            transform: translateX(3px);
+        }
+
+        .benefit-icon {
+            font-size: 1rem; /* Slightly smaller icon */
+            color: var(--primary-blue);
+            min-width: 20px; /* Reduced min-width */
+            text-align: center;
+            filter: drop-shadow(0 0 2px rgba(var(--primary-blue), 0.5));
+        }
+
+        .media-section {
+            background: linear-gradient(135deg, rgba(var(--red), 0.1), rgba(var(--bronze), 0.1));
+            border: 1px solid rgba(var(--red), 0.3);
+            margin-bottom: 1.5rem; /* Reduced margin */
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 0.6rem; /* Reduced gap */
+            margin-top: 0.8rem; /* Reduced margin */
+        }
+
+        .media-item {
+            background: rgba(var(--primary-blue), 0.1);
+            padding: 0.7rem; /* Reduced padding */
+            border-radius: 8px;
+            border-left: 3px solid var(--red);
+            font-size: 0.75rem; /* Slightly smaller font */
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-item:hover {
+            background: rgba(var(--red), 0.15);
+            transform: translateX(3px);
+        }
+
+        .media-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .media-item strong {
+            display: block;
+            margin-bottom: 0.2rem; /* Reduced margin */
+            font-size: 0.8rem; /* Slightly smaller font */
+            color: var(--secondary-blue);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0288d1, #026aa7);
+            padding: 1.5rem; /* Reduced padding */
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem; /* Reduced margin */
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(1.3rem, 4vw, 1.8rem); /* Adjusted min font size */
+            font-weight: 800;
+            margin-bottom: 0.8rem; /* Reduced margin */
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-text {
+            font-size: clamp(0.85rem, 2vw, 1.1rem);
+            margin-bottom: 1rem; /* Reduced margin */
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .packages-preview {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem; /* Reduced padding */
+            border-radius: 10px;
+            box-shadow: inset 0 -3px 5px rgba(1, 74, 123, 0.7);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 1rem; /* Reduced gap */
+            margin-top: 0.8rem; /* Reduced margin */
+        }
+
+        .package-item {
+            text-align: center;
+            padding: 0.8rem; /* Reduced padding */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .package-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .package-title {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-weight: 800;
+            margin-bottom: 0.6rem; /* Reduced margin */
+            text-shadow: 0 0 3px currentColor;
+        }
+
+        .package-features {
+            font-size: 0.8rem; /* Slightly smaller font */
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        .gold-package .package-title { color: var(--gold); }
+        .silver-package .package-title { color: var(--silver); }
+        .bronze-package .package-title { color: var(--bronze); }
+
+        /* Media Queries per la reattività */
+        @media (min-width: 500px) { /* Adjusted breakpoint slightly for better mobile experience before tablets */
+            body {
+                padding: 1.5rem 1rem; /* Increase padding for slightly larger phones */
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .victory-content {
+                flex-direction: row; /* Go back to row layout */
+                justify-content: center; /* Center horizontally */
+                align-items: flex-start; /* Align items to the top for better balance */
+            }
+            .victory-text {
+                flex-grow: 1; /* Allow text to grow */
+            }
+            .victory-text h2 {
+                text-align: left; /* Align title left when more space */
+            }
+            .victory-details {
+                grid-template-columns: 1fr 1fr; /* Two columns for victory items */
+            }
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photo-main {
+                grid-column: span 2;
+                padding-top: 40%; /* Adjust aspect ratio for main photo in 2-column layout */
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .partner-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* More items per row */
+                gap: 0.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                font-size: 1em; /* Base font size for tablets */
+                padding: 2rem; /* Increased padding */
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+            .victory-content {
+                gap: 1.5rem;
+                align-items: center; /* Align items center again for larger screens */
+            }
+            .victory-text h2 {
+                text-align: left; /* Ensure left alignment */
+            }
+            .victory-details {
+                grid-template-columns: 1fr 1fr;
+            }
+            .photo-grid {
+                grid-template-columns: 2fr 1fr 1fr; /* Specific layout for tablets */
+                /* Removed fixed height. Let content define height. */
+                height: auto; /* Ensure auto height, don't force a fixed height */
+            }
+            .photo-main {
+                grid-column: span 2;
+                grid-row: span 1;
+                padding-top: unset; /* Remove padding-top override if not needed for specific layout */
+                /* If you want a specific aspect ratio for main on desktop, apply it here */
+                padding-top: 50%; /* Example: 2:1 aspect ratio for main photo on desktop */
+            }
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .content-grid {
+                grid-template-columns: 1.2fr 1fr; /* Two columns for content */
+            }
+            .packages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .media-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .partner-grid {
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Even more items per row */
+            }
+        }
+
+        @media (min-width: 992px) { /* Optional: for larger desktops if needed */
+            .partner-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+
+        /* Stili per la stampa */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                font-size: 11px;
+                padding: 0;
+            }
+            .section {
+                background: #f8f9fa !important;
+                box-shadow: none !important;
+                border: 1px solid #dee2e6 !important;
+            }
+            .victory-banner {
+                background: #e3f2fd !important;
+            }
+            .cta-section {
+                background: #1976d2 !important;
+                color: #fff !important;
+            }
+            body::before {
+                display: none;
+            }
+            .photo-grid {
+                height: auto; /* Allow height to auto-adjust for print */
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Simpler grid for print */
+            }
+            .photo-main {
+                grid-column: auto; /* Reset grid-column for print */
+                padding-top: 66.66%; /* Maintain aspect ratio for print */
+            }
+            .photo-item {
+                /* Ensure background images are printed */
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="event-info">10 & 11 OTTOBRE 2025 • NAPOLI, ITALY</div>
+            <h1>DEFINSPACE 2025</h1>
+            <p class="subtitle">L'Hackathon del Comando Spaziale Francese</p>
+            <p class="theme">REAL-TIME SURVEILLANCE</p>
+        </header>
+
+        <div class="victory-banner">
+            <div class="victory-content">
+                <div class="victory-text">
+                    <h2>🇮🇹 L'ITALIA È CAMPIONE IN CARICA</h2>
+                    <div class="victory-details">
+                        <div class="victory-item">
+                            <h3>🥇 CHALLENGE TECNICA</h3>
+                            <p><strong>Team MousquetAIRe</strong><br>Università Federico II Napoli<br>Primo posto finale internazionale</p>
+                        </div>
+                        <div class="victory-item">
+                            <h3>🥈 CHALLENGE GENERALISTA</h3>
+                            <p><strong>Air Force Academy</strong><br>Accademia Aeronautica Pozzuoli<br>Secondo posto finale internazionale</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="victory-badge">
+                    <span class="trophy">🏆</span>
+                    <div class="year">2023</div>
+                    <div style="font-size: 0.9rem; margin-top: 8px; color: var(--secondary-blue);">WINNERS</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-title">📊 Numeri dell'Evento Internazionale 2023</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">348</div>
+                    <div class="stat-label">Studenti</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Paesi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Sponsor Int.</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Coach</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="section">
+                <h3 class="section-title">
+                    <span class="section-icon">🇮🇹</span>
+                    Partner Nazionali 2023
+                </h3>
+                <div class="partner-category">
+                    <div class="partner-category-title gold-title">Gold Sponsor</div>
+                    <div class="partner-grid">
+                        <div class="partner-tag gold-tag">
+                            <a href="https://www.gruppoadler.it/" target="_blank">Adler Group</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category">
+                    <div class="partner-category-title silver-title">Silver Sponsor</div>
+                    <div class="partner-grid">
+                        <div class="partner-tag silver-tag">
+                            <a href="https://www.airbus.com/" target="_blank">Airbus</a>
+                        </div>
+                        <div class="partner-tag silver-tag">
+                            <a href="https://www.leonardo.com/" target="_blank">Leonardo</a>
+                        </div>
+                        <div class="partner-tag silver-tag">
+                            <a href="https://www.thalesaleniaspace.com/" target="_blank">Thales Alenia</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-category">
+                    <div class="partner-category-title bronze-title">Bronze Sponsor</div>
+                    <div class="partner-grid">
+                        <div class="partner-tag bronze-tag">
+                            <a href="https://www.powerflex.cloud/" target="_blank">Powerflex</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">
+                    <span class="section-icon">🌍</span>
+                    Partner Internazionali
+                </h3>
+                <div class="partner-grid">
+                    <div class="partner-tag">CGI</div>
+                    <div class="partner-tag">Thales</div>
+                    <div class="partner-tag">Safran</div>
+                    <div class="partner-tag">Orange</div>
+                    <div class="partner-tag">MathWorks</div>
+                    <div class="partner-tag">Telespazio</div>
+                    <div class="partner-tag">Ariane Group</div>
+                    <div class="partner-tag">CS Group</div>
+                    <div class="partner-tag">Sopra Steria</div>
+                    <div class="partner-tag">+ Altri 12</div>
+                </div>
+                <br>
+                <h3 class="section-title">
+                    Partner Istituzionali
+                </h3>
+                <div class="partner-grid">
+                    <div class="partner-tag">Comando Spaziale FR</div>
+                    <div class="partner-tag">CNES Francia</div>
+                    <div class="partner-tag">DGA Francia</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">
+                <span class="section-icon">🚀</span>
+                Benefici Sponsorship 2025
+            </h3>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <div><strong>Visibilità Internazionale</strong><br>7 paesi, centinaia di talenti</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏆</div>
+                    <div><strong>Brand Vincente</strong><br>Italia campione in carica</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔬</div>
+                    <div><strong>Innovazione R&D</strong><br>Accesso soluzioni esclusive</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <div><strong>Network Strategico</strong><br>Leader settore aerospaziale</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📺</div>
+                    <div><strong>Copertura Mediatica</strong><br>Nazionale e Internazionale</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎓</div>
+                    <div><strong>Talent Acquisition</strong><br>Accesso ai migliori talenti</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section media-section">
+            <h3 class="section-title">
+                <span class="section-icon">📺</span>
+                Copertura Mediatica 2023 - Oltre 50 Apparizioni
+            </h3>
+            <div class="media-grid">
+                <div class="media-item">
+                    <strong><a href="https://www.ilsole24ore.com/" target="_blank">Il Sole 24 Ore</a></strong>
+                    <small>Partner strategico scelto dalla Francia</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://napoli.repubblica.it/" target="_blank">La Repubblica</a></strong>
+                    <small>Vincitori italiani hackathon</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://napoli.corriere.it/" target="_blank">Corriere Mezzogiorno</a></strong>
+                    <small>Sfida spaziale per i giovani</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://www.ilmattino.it/" target="_blank">Il Mattino</a></strong>
+                    <small>Evento internazionale a Napoli</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://www.ildenaro.it/" target="_blank">Il Denaro</a></strong>
+                    <small>Ricerca spaziale mondiale</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://www.rai.it/" target="_blank">TgR Campania</a></strong>
+                    <small>3 servizi televisivi</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://www.difesaonline.it/" target="_blank">Difesa Online</a></strong>
+                    <small>Competizione internazionale</small>
+                </div>
+                <div class="media-item">
+                    <strong><a href="https://www.aeronautica.difesa.it/" target="_blank">Aeronautica Militare</a></strong>
+                    <small>Accademia alle finali Parigi</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-content">
+                <h3 class="cta-title">DIVENTA SPONSOR DEFINSPACE 2025</h3>
+                <p class="cta-text">Unisciti a noi per un'esperienza unica di innovazione e visibilità nel settore aerospaziale.</p>
+                <div class="packages-preview">
+                    <div class="packages-grid">
+                        <div class="package-item gold-package">
+                            <div class="package-title">Gold Package</div>
+                            <div class="package-features">Massima visibilità, mentoring esclusivo, recruitment diretto</div>
+                        </div>
+                        <div class="package-item silver-package">
+                            <div class="package-title">Silver Package</div>
+                            <div class="package-features">Visibilità elevata, accesso ai talenti, sessioni dedicate</div>
+                        </div>
+                        <div class="package-item bronze-package">
+                            <div class="package-title">Bronze Package</div>
+                            <div class="package-features">Riconoscimento brand, presenza evento, networking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> </body>
+</html>
