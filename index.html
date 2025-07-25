@@ -222,6 +222,7 @@
             padding: 1rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
+            margin-top: 1.5rem;     /* <-- AGGIUNGI QUESTA RIGA */
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(var(--primary-blue), 0.2);
             text-align: center;
@@ -390,44 +391,49 @@
         }
 
         .partner-tag {
-    background: rgba(var(--primary-blue), 0.1);
-    border: 1px solid var(--primary-blue);
-    padding: 0.5rem 0.4rem;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.6rem;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    line-height: 1.3;
-    height: auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    white-space: normal;
-    min-height: 2.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}    
+            background: rgba(var(--primary-blue), 0.1);
+            border: 1px solid var(--primary-blue);
+            padding: 0.5rem 0.4rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.6rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.3;
+            height: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            white-space: normal;
+            min-height: 2.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }    
 
         .partner-tag a {
             color: var(--light-text);
             text-decoration: none;
         }
 
-        .partner-tag:hover {
-            background: rgba(var(--primary-blue), 0.2);
-            border-color: var(--primary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(var(--primary-blue), 0.3);
-        }
+
 
         .gold-tag { border-color: var(--gold); }
         .silver-tag { border-color: var(--silver); }
         .bronze-tag { border-color: var(--bronze); }
+
+        .partner-tag.gold-tag:hover,
+        .partner-tag.silver-tag:hover,
+        .partner-tag.bronze-tag:hover {
+            background: rgba(var(--primary-blue), 0.25);
+            border-color: var(--primary-blue);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(var(--primary-blue), 0.5);
+            cursor: pointer;
+        }
 
         .benefits-grid {
             display: grid;
@@ -478,15 +484,21 @@
             background: rgba(var(--primary-blue), 0.1);
             padding: 0.7rem;
             border-radius: 8px;
-            border-left: 3px solid var(--red);
+            border-left: 3px solid #5899eb;
             font-size: 0.75rem;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 4px rgb(88, 153, 235);
         }
 
         .media-item:hover {
-            background: rgba(var(--red), 0.15);
-            transform: translateX(3px);
+            background: rgba(var(--primary-blue), 0.2);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(var(--primary-blue), 0.4);
+            cursor: pointer;
+        }
+
+        .media-item {
+            cursor: pointer;
         }
 
         .media-item a {
@@ -511,6 +523,8 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+
         }
 
         .cta-section::before {
@@ -708,16 +722,16 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="event-info">10 & 11 OTTOBRE 2025 • NAPOLI, ITALY</div>
-            <h1>DEFINSPACE 2025</h1>
+            <div class="event-info">17 & 18 NOVEMBRE 2023 • NAPOLI, ITALY</div>
+            <h1>DEFINSPACE 2023</h1>
             <p class="subtitle">L'Hackathon del Comando Spaziale Francese</p>
-            <p class="theme">REAL-TIME SURVEILLANCE</p>
+            <p class="theme">Costellazioni strategiche per una difesa spaziale interoperabile e resiliente</p>
         </header>
 
         <div class="victory-banner">
             <div class="victory-content">
                 <div class="victory-text">
-                    <h2>L'ITALIA È CAMPIONE IN CARICA</h2>
+                    <h2>L'Italia vince l'hackaton internazionale dello spazio</h2>
                     <div class="victory-details">
                         <div class="victory-item">
                             <h3>🥇 CHALLENGE TECNICA</h3>
@@ -771,7 +785,7 @@
                     <div class="partner-category-title gold-title">Gold Sponsor</div>
                     <div class="partner-grid">
                         <div class="partner-tag gold-tag">
-                            <a href="https://www.gruppoadler.it/" target="_blank">Adler Group</a>
+                            <a href="https://www.gruppoadler.it/" >Adler Group</a>
                         </div>
                     </div>
                 </div>
@@ -779,13 +793,13 @@
                     <div class="partner-category-title silver-title">Silver Sponsor</div>
                     <div class="partner-grid">
                         <div class="partner-tag silver-tag">
-                            <a href="https://www.airbus.com/" target="_blank">Airbus</a>
+                            <a href="https://www.airbus.com/" >Airbus</a>
                         </div>
                         <div class="partner-tag silver-tag">
-                            <a href="https://www.leonardo.com/" target="_blank">Leonardo</a>
+                            <a href="https://www.leonardo.com/" >Leonardo</a>
                         </div>
                         <div class="partner-tag silver-tag">
-                            <a href="https://www.thalesaleniaspace.com/" target="_blank">Thales Alenia</a>
+                            <a href="https://www.thalesaleniaspace.com/" >Thales Alenia</a>
                         </div>
                     </div>
                 </div>
@@ -793,7 +807,7 @@
                     <div class="partner-category-title bronze-title">Bronze Sponsor</div>
                     <div class="partner-grid">
                         <div class="partner-tag bronze-tag">
-                            <a href="https://www.powerflex.cloud/" target="_blank">Powerflex</a>
+                            <a href="https://www.powerflex.cloud/" >Powerflex</a>
                         </div>
                     </div>
                 </div>
@@ -835,68 +849,99 @@
             </h3>
             <div class="media-grid">
                 <div class="media-item">
-                    <strong><a href="https://www.ilsole24ore.com/art/per-l-hackaton-delfinspace-francia-sceglie-dac-come-partner-italiano-AFynzCNB" target="_blank">Il Sole 24 Ore</a></strong>
+                    <strong><a href="https://www.ilsole24ore.com/art/per-l-hackaton-delfinspace-francia-sceglie-dac-come-partner-italiano-AFynzCNB" >Il Sole 24 Ore</a></strong>
                     <small>Partner strategico scelto dalla Francia</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://napoli.repubblica.it/cronaca/2023/11/19/news/hackathon_definspace_ecco_i_vincitori_per_litalia-420760792/" target="_blank">La Repubblica</a></strong>
+                    <strong><a href="https://napoli.repubblica.it/cronaca/2023/11/19/news/hackathon_definspace_ecco_i_vincitori_per_litalia-420760792/" >La Repubblica</a></strong>
                     <small>Vincitori italiani hackathon</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://napoli.corriere.it/notizie/cronaca/23_novembre_20/hackathon-definspace-conclusa-la-sfida-ecco-i-vincitori-64920126-019f-4a46-b0e8-5d19d2a42xlk.shtml" target="_blank">Corriere Mezzogiorno</a></strong>
+                    <strong><a href="https://napoli.corriere.it/notizie/cronaca/23_novembre_20/hackathon-definspace-conclusa-la-sfida-ecco-i-vincitori-64920126-019f-4a46-b0e8-5d19d2a42xlk.shtml" >Corriere Mezzogiorno</a></strong>
                     <small>Sfida spaziale per i giovani</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://www.ilmattino.it/napoli/cronaca/hackathon_definspace_ecco_i_vincitori_per_l_italia-7765998.html" target="_blank">Il Mattino</a></strong>
+                    <strong><a href="https://www.ilmattino.it/napoli/cronaca/hackathon_definspace_ecco_i_vincitori_per_l_italia-7765998.html" >Il Mattino</a></strong>
                     <small>Evento internazionale a Napoli</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://www.defense.gouv.fr/air/actualites/grande-finale-du-hackathon-definspace-2023" target="_blank">Ministère des Armées</a></strong>
+                    <strong><a href="https://www.defense.gouv.fr/air/actualites/grande-finale-du-hackathon-definspace-2023" >Ministère des Armées</a></strong>
                     <small>La grande finale du hackathon</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://www.youtube.com/watch?v=YEVJzBqVohU" target="_blank">TgR Campania</a></strong>
+                    <strong><a href="https://www.youtube.com/watch?v=YEVJzBqVohU" >TgR Campania</a></strong>
                     <small>3 servizi televisivi</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://www.aerospace-valley.com/actualite/mousquetaire-et-epic-vainqueurs-de-la-finale-internationale-de-definspace-2023-le" target="_blank">Aerospace Valley</a></strong>
+                    <strong><a href="https://www.aerospace-valley.com/actualite/mousquetaire-et-epic-vainqueurs-de-la-finale-internationale-de-definspace-2023-le" >Aerospace Valley</a></strong>
                     <small>La finale internationale de DefInSpace</small>
                 </div>
                 <div class="media-item">
-                    <strong><a href="https://www.aeronautica.difesa.it/news/spazio-laccademia-aeronautica-alle-finali-della-competizione-internazionale-definspace-2023-di-parigi/" target="_blank">Aeronautica Militare</a></strong>
+                    <strong><a href="https://www.aeronautica.difesa.it/news/spazio-laccademia-aeronautica-alle-finali-della-competizione-internazionale-definspace-2023-di-parigi/" >Aeronautica Militare</a></strong>
                     <small>Accademia alle finali Parigi</small>
                 </div>
                    <div class="media-item">
-                    <strong><a href="https://www.youtube.com/playlist?list=PLR3pInrH2wuVwAey6lYBjTB-HD3IqQCOK" target="_blank">Comunicazione DAC</a></strong>
+                    <strong><a href="https://www.youtube.com/playlist?list=PLR3pInrH2wuVwAey6lYBjTB-HD3IqQCOK" >Comunicazione DAC</a></strong>
                     <small>Sponsorships Hackaton DefInSpace 2023</small>
                 </div>
             </div>
         </div>
 
-        <div class="cta-section">
+        <div class="photo-section">
+            <div class="photo-title">📸 Galleria DefInSpace 2023</div>
+                <div class="photo-container">
+                 <img src="https://dac-scarl.github.io/DEFINSPACE2023/definspace_2023.jpg" alt="DefInSpace 2023 - Premiazione" loading="lazy">
+                </div>
+           
+        </div>
+
+
+        
+
+
+                <div class="cta-section">
             <div class="cta-content">
                 <h3 class="cta-title">DIVENTA SPONSOR DEFINSPACE 2025</h3>
                 <p class="cta-text">Unisciti a noi per un'esperienza unica di innovazione e visibilità nel settore aerospaziale.</p>
                 <div class="packages-preview">
                     <div class="packages-grid">
-                        <div class="package-item gold-package">
+                        <div class="package-item gold-package" >
                             <div class="package-title">Gold Package</div>
                             <div class="package-features">Co-branding, keynote speech, 2 membri giuria, video aziendale</div>
                         </div>
-                        <div class="package-item silver-package">
+                        <div class="package-item silver-package" >
                             <div class="package-title">Silver Package</div>
                             <div class="package-features">Keynote speech, 1 membro giuria, intervista dedicata</div>
                         </div>
-                        <div class="package-item bronze-package">
+                        <div class="package-item bronze-package" >
                             <div class="package-title">Bronze Package</div>
                             <div class="package-features">Logo sui materiali, video promozionale, presenza comunicazione</div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 1.2rem;">
+                <button onclick="window.location.href='https://dac-scarl.github.io/DEFINSPACE2025/sponsor_packages.html'" 
+                        style="background: rgba(255, 255, 255, 0.2); 
+                               color: white; 
+                               border: 2px solid rgba(255, 255, 255, 0.5); 
+                               padding: 12px 24px; 
+                               border-radius: 8px; 
+                               font-size: 0.9rem; 
+                               font-weight: 600; 
+                               cursor: pointer; 
+                               transition: all 0.3s ease;
+                               font-family: 'Montserrat', sans-serif;"
+                        onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
+                        onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.transform='translateY(0)'">
+                    📋 Vedi Condizioni Complete e Prezzi
+                </button>
+            </div>
+
         </div>
 
-        <div class="section">
+                <div class="section">
             <h3 class="section-title">
                 <span class="section-icon">🚀</span>
                 Benefici Sponsorship 2025
@@ -928,12 +973,5 @@
                 </div>
             </div>
         </div>
-                <div class="photo-section">
-            <div class="photo-title">📸 Galleria DefInSpace 2023</div>
-            <div class="photo-container">
-                <img src="https://dac-scarl.github.io/DEFINSPACE2023/definspace_2023.jpg" alt="DefInSpace 2023 - Premiazione" loading="lazy">
-            </div>
-        </div>
-    </div>
 </body>
 </html>
